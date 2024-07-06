@@ -4,7 +4,7 @@ import type { NextRequest } from "next/server";
 //middleware part 1 login
 export function middleware(request:NextRequest){
     const path = request.nextUrl.pathname
-    const isPublicPath = path ==='/login'||path==='/signup'
+    const isPublicPath = path ==='/login'||path==='/signup'|| path ==='/verifyemail'
 
     const token = request.cookies.get('token')?.value||''
     // redirecting user if he already has token and is on a public path
@@ -26,6 +26,7 @@ export const config={
         '/profile',
         '/login',
         '/signup',
+        '/verifyemail'
         ]
 } 
 
